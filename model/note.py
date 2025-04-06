@@ -1,5 +1,7 @@
 from datetime import datetime
-class Note:
+import uuid
+import controller.counter as counter
+class note:
     def __init__(self, id=str(counter.counter()), title="text", body="text",
                  date=str(datetime.now().strftime("%d.%m.%Y %H:%M:%S"))):
         self.id=id
@@ -33,3 +35,5 @@ class Note:
 
     def to_string(note):
         return note.id + ';' + note.title + ';' + note.body + ';' + note.date
+    def map_note(note):
+        return '\nID: ' + note.id + '\n' + 'Название: ' + note.title + '\n' + 'Описание: ' +note.body + '\n' + 'Дата публикации: ' +note.date
